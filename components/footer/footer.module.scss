@@ -5,18 +5,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.footer img {
-  margin-left: 0.5rem;
-}
+  .logo {
+    margin-left: 0.5rem;
+    height: 1em;
+  }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  height: 1em;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

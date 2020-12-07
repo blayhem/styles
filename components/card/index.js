@@ -1,4 +1,5 @@
 import styles from "./card.module.css";
+// CSS modules
 
 export default function Card({ title, description, link }) {
   return (
