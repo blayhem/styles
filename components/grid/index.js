@@ -3,9 +3,10 @@ import styles from "./grid.module.css";
 import { CARDS } from "./cards";
 
 export default function Grid() {
-  const gridClassName = "grid grid-cols-2 gap-8 my-16"; // styles.grid; //
+  const moduleClass = styles.grid;
+  const tailwindClass = "grid grid-cols-2 gap-8 my-16";
   return (
-    <div className={gridClassName}>
+    <div className={tailwindClass}>
       {CARDS.map((c) => (
         <Card key={c.title} {...c} />
       ))}
