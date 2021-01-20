@@ -8,10 +8,11 @@ I created a Next template app using [`create-next-app`](https://nextjs.org/docs/
 
 `components/card` uses [CSS modules](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css), supported by Next out of the box.
 
-| Pros                  | Cons                                                                                                |
-| --------------------- | --------------------------------------------------------------------------------------------------- |
-| Simple solution       | CSS syntax can get longer/more verbose                                                              |
-| No extra dependencies | You may lose some [special functions](https://sass-lang.com/documentation/syntax/special-functions) |
+| Pros                                                                                                                                                     | Cons                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Simple solution                                                                                                                                          | CSS syntax can get longer/more verbose                                                              |
+| No extra dependencies                                                                                                                                    | You may lose some [special functions](https://sass-lang.com/documentation/syntax/special-functions) |
+| Avoids [class collisions](https://stackoverflow.com/questions/21828894/how-do-you-avoid-class-name-collisions) without using BEM or other ugly approach. |                                                                                                     |
 
 ### SCSS Modules
 
@@ -41,9 +42,16 @@ Tailwind CSS is a so-called "utility-first" CSS framework, which means that ever
 
 `components/main` uses [styled-components](https://styled-components.com/).
 
-(WIP)
+Styled components is a library that uses tagged template literals to style your components, that is, inline CSS in JS. You can see there's only one file for the component, for the presentational component and its style.
 
-## Getting Started
+| Pros                                                                         | Cons                                                                                                                                                    |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| JS and CSS live together, simple/cleaner file(s)                             | Again, mixing all together adds lines of code and complexity. You can solve this by still separating the styles in a separate js file.                  |
+| You can have access to props in the CSS properties, and create complex logic | Sometimes code editors don't highlight the syntax of CSS-in-JS or CSS inside a template string, as the file doesn't have a .css (or similar) extension. |
+
+This is all my very limited and personal opinion with all the different solutions I tried so far in React and Nextjs applications. Please clone the repo, check the components, and try for yourself! You can let me know your thoughts [on Twitter](https://twitter.com/blayhem).
+
+## How to run the application.
 
 First, run the development server:
 
@@ -54,20 +62,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
